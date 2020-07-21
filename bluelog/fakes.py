@@ -19,12 +19,13 @@ fake = Faker()
 def fake_admin():
     admin = Admin(
         username='admin',
-        blog_title='Bluelog',
-        blog_sub_title="No, I'm the real thing.",
-        name='Mima Kirigoe',
+        blog_title='xw.cai个人博客',
+        blog_sub_title="You have to survive the days when nobody cares about it "
+                       "before you can embrace your poetry and the distance.",
+        name='Admin',
         about='Um, l, Mima Kirigoe, had a fun time as a member of CHAM...'
     )
-    admin.set_password('helloflask')
+    admin.set_password('admin')
     db.session.add(admin)
     db.session.commit()
 

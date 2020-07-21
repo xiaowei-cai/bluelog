@@ -35,10 +35,10 @@ def create_app(config_name=None):
     register_logging(app)
     register_extensions(app)
     register_blueprints(app)
-    register_commands(app)
-    register_errors(app)
     register_shell_context(app)
     register_template_context(app)
+    register_errors(app)
+    register_commands(app)
     register_request_handlers(app)
     return app
 
@@ -85,7 +85,7 @@ def register_extensions(app):
     ckeditor.init_app(app)
     mail.init_app(app)
     moment.init_app(app)
-    toolbar.init_app(app)
+    # toolbar.init_app(app)
     migrate.init_app(app, db)
 
 
@@ -165,8 +165,9 @@ def register_commands(app):
             click.echo('Creating the temporary administrator account...')
             admin = Admin(
                 username=username,
-                blog_title='Bluelog',
-                blog_sub_title="No, I'm the real thing.",
+                blog_title='xw.cai个人博客',
+                blog_sub_title="You have to survive the days when nobody cares about it "
+                               "before you can embrace your poetry and the distance.",
                 name='Admin',
                 about='Anything about you.'
             )
